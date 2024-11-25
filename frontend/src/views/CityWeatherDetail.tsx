@@ -4,8 +4,8 @@ import {
   fetchGeocodingDataByName,
   fetchWeatherData,
 } from "../api/rest/weatherAPI";
-import { CityList } from "../types/weather";
-import { Descriptions, DescriptionsProps, Skeleton } from "antd";
+import { CityList, WeatherData } from "../types/weather";
+import { Descriptions, DescriptionsProps, Result, Skeleton } from "antd";
 import {
   getHumidityEmoji,
   getPressureEmoji,
@@ -13,7 +13,7 @@ import {
   getTemperatureEmoji,
   getWindDirectionEmoji,
   getWindSpeedEmoji,
-} from "../utils/emojiGenerators";
+} from "../utils/emoji-generators";
 
 const CityWeatherDetail = ({
   cityName,
@@ -38,7 +38,7 @@ const CityWeatherDetail = ({
     data: weatherData,
     error: weatherError,
     isLoading: weatherLoading,
-  } = useQuery({
+  } = useQuery<WeatherData | null>({
     queryKey: ["weatherData", cityData?.[0]?.lat, cityData?.[0]?.lon],
     queryFn: () => {
       if (cityData && cityData.length > 0) {
@@ -53,7 +53,13 @@ const CityWeatherDetail = ({
   });
 
   if (cityError || weatherError)
-    return <div>Error: {cityError?.message || weatherError?.message}</div>;
+    return (
+      <Result
+        status="500"
+        title="500"
+        subTitle="Sorry, something went wrong. Please try again after a while"
+      />
+    );
 
   const weatherIconUrl = weatherData?.weather[0]?.icon
     ? `https://openweathermap.org/img/wn/${weatherData?.weather[0]?.icon}.png`

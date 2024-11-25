@@ -1,21 +1,11 @@
 import { Content } from "antd/es/layout/layout";
 import React, { useEffect, useState } from "react";
 
-import {
-  Button,
-  Drawer,
-  Empty,
-  Flex,
-  Grid,
-  Input,
-  Space,
-  Typography,
-} from "antd";
+import { Button, Drawer, Empty, Flex, Grid, Typography } from "antd";
 
 import CountrySelectionShell from "./CountrySelectionShell";
 import CountryDetailsPage from "./CountryDetailPage";
 import { useSearchParams } from "react-router-dom";
-const { Search } = Input;
 
 const { useBreakpoint } = Grid;
 

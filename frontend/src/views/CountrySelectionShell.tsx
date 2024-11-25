@@ -17,7 +17,7 @@ import {
   sortByDropdownParamsGenerator,
   sortTypeParamsGenerator,
   treeFilterParamsGenerator,
-} from "../utils/searchParamsGenerators";
+} from "../utils/searchparams-generators";
 const { Search } = Input;
 
 const CountrySelectionShell = (): React.ReactElement => {
