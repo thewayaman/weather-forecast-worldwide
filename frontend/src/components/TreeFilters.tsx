@@ -7,13 +7,9 @@ const TreeFilter = ({
   treeFilterSelectionChange,
 }: {
   defaultTreeValue: string[];
-  treeFilterSelectionChange: (
-    treeFilterArray: string[]
-    // label: React.ReactNode[],
-    // extras: any
-  ) => void;
+  treeFilterSelectionChange: (treeFilterArray: string[]) => void;
 }): React.ReactElement => {
-  const { data, loading, error } = useCountryLanguageData();
+  const { data, error } = useCountryLanguageData();
   const [treeData, setTreeData] = useState([
     {
       value: "region",
@@ -50,6 +46,12 @@ const TreeFilter = ({
     },
   ]);
 
+  if (error) {
+    const treeDataCopy = JSON.parse(JSON.stringify(treeData));
+    treeDataCopy.pop();
+    setTreeData(treeDataCopy);
+  }
+
   if (data?.languages.edges.length && !treeData[1].children.length) {
     const treeDataCopy = JSON.parse(JSON.stringify(treeData));
     treeDataCopy[1].children = data?.languages.edges.map(({ node }) => ({
@@ -65,8 +67,7 @@ const TreeFilter = ({
       defaultValue={defaultTreeValue}
       style={{ width: "45%" }}
       treeData={treeData}
-      onChange={(value, label, extras) => {
-        console.log(value, label, extras);
+      onChange={(value) => {
         treeFilterSelectionChange(value);
       }}
       treeIcon

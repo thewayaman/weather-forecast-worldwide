@@ -1,4 +1,3 @@
-// src/hooks/useCountryData.ts
 import { useQuery } from "@apollo/client";
 import {
   GET_COUNTRIES,

@@ -3,7 +3,6 @@ import { Avatar, Empty, Flex, List, Skeleton, Space } from "antd";
 
 import { CountryEdge, CountryNode } from "../types/countries";
 
-// Component to fetch and display countries data
 const CountriesList = ({
   countriesData,
   isDataLoading,

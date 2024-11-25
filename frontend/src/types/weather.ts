@@ -61,7 +61,7 @@ export type WeatherData = {
 };
 
 type LocalNames = {
-  [languageCode: string]: string; // e.g., "de": "London", "fr": "Londres", etc.
+  [languageCode: string]: string;
 };
 
 type CityData = {

@@ -1,10 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
-import {
-  fetchGeocodingDataByName,
-  fetchWeatherData,
-} from "../api/rest/weatherAPI";
-import { CityList, WeatherData } from "../types/weather";
 import { Descriptions, DescriptionsProps, Result, Skeleton } from "antd";
 import {
   getHumidityEmoji,
@@ -14,6 +8,7 @@ import {
   getWindDirectionEmoji,
   getWindSpeedEmoji,
 } from "../utils/emoji-generators";
+import { useCityData, useWeatherData } from "../hooks/useCityWeatherData";
 
 const CityWeatherDetail = ({
   cityName,
@@ -27,30 +22,16 @@ const CityWeatherDetail = ({
     data: cityData,
     error: cityError,
     isLoading: cityLoading,
-  } = useQuery<CityList>({
-    queryKey: ["cityCoordinates", cityName],
-    queryFn: () => fetchGeocodingDataByName(cityName),
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
+  } = useCityData(cityName);
 
   const {
     data: weatherData,
     error: weatherError,
     isLoading: weatherLoading,
-  } = useQuery<WeatherData | null>({
-    queryKey: ["weatherData", cityData?.[0]?.lat, cityData?.[0]?.lon],
-    queryFn: () => {
-      if (cityData && cityData.length > 0) {
-        const { lat, lon } = cityData[0];
-        return fetchWeatherData(lat.toString(), lon.toString()); // Adjust for your API signature
-      }
-      return null;
-    },
-    enabled: !!cityData,
-    refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
+  } = useWeatherData(
+    cityData?.[0]?.lat?.toString() || "",
+    cityData?.[0]?.lon?.toString() || ""
+  );
 
   if (cityError || weatherError)
     return (
