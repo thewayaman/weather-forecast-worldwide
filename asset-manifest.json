@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/weather-forecast-worldwide/static/css/main.c538ef7b.css",
-    "main.js": "/weather-forecast-worldwide/static/js/main.6e8fd5fc.js",
-    "static/js/453.8ab44547.chunk.js": "/weather-forecast-worldwide/static/js/453.8ab44547.chunk.js",
-    "index.html": "/weather-forecast-worldwide/index.html",
-    "main.c538ef7b.css.map": "/weather-forecast-worldwide/static/css/main.c538ef7b.css.map",
-    "main.6e8fd5fc.js.map": "/weather-forecast-worldwide/static/js/main.6e8fd5fc.js.map",
-    "453.8ab44547.chunk.js.map": "/weather-forecast-worldwide/static/js/453.8ab44547.chunk.js.map"
+    "main.css": "/weather-forecast-worldwide/frontend/static/css/main.c538ef7b.css",
+    "main.js": "/weather-forecast-worldwide/frontend/static/js/main.19f28813.js",
+    "static/js/453.8ab44547.chunk.js": "/weather-forecast-worldwide/frontend/static/js/453.8ab44547.chunk.js",
+    "index.html": "/weather-forecast-worldwide/frontend/index.html",
+    "main.c538ef7b.css.map": "/weather-forecast-worldwide/frontend/static/css/main.c538ef7b.css.map",
+    "main.19f28813.js.map": "/weather-forecast-worldwide/frontend/static/js/main.19f28813.js.map",
+    "453.8ab44547.chunk.js.map": "/weather-forecast-worldwide/frontend/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c538ef7b.css",
-    "static/js/main.6e8fd5fc.js"
+    "static/js/main.19f28813.js"
   ]
 }
