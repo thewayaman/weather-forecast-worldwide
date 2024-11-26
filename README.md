@@ -2,6 +2,14 @@
 A single-page application (SPA) built with React, TypeScript, and GraphQL that showcases my expertise in front-end development. This app fetches and displays detailed information about countries using the public Countries GraphQL API and integrates real-time weather data from a public weather API.
 
 
+## 🌍 Live Demo 🚀
+
+Check out the live version of the **Weather Forecast Worldwide** app hosted on GitHub Pages:
+
+🔗 [**Weather Forecast App**](https://thewayaman.github.io/weather-forecast-worldwide/) 🌤️
+
+Feel free to explore the app, check the weather worldwide, and explore the features we've implemented! 😊
+
 
 # frontend
 
