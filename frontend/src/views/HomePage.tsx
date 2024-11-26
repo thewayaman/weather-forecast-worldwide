@@ -33,10 +33,9 @@ const HomePage = (): React.ReactElement => {
       }
     : {
         maxWidth: "65%",
-        margin: "auto",
         border: "1px solid lightgrey",
         borderRadius: "8px",
-        marginBottom: "10px",
+        margin: "0% auto",
       };
   return (
     <>
@@ -56,7 +55,13 @@ const HomePage = (): React.ReactElement => {
           <CountrySelectionShell />
         </Content>
       </Drawer>
-      <Flex style={{ ...padding, height: "100vh" }} vertical={screens.xs}>
+      <Flex
+        style={{
+          ...padding,
+          height: "100vh",
+        }}
+        vertical={screens.xs}
+      >
         {screens.xs ? (
           <>
             <Button
@@ -87,6 +92,7 @@ const HomePage = (): React.ReactElement => {
             <CountryDetailsPage />
           ) : (
             <Empty
+              style={{ margin: "20% auto" }}
               description={
                 <Typography.Text>
                   Choose a country from the list to view
