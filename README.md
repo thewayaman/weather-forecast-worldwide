@@ -8,7 +8,7 @@ Check out the live version of the **Weather Forecast Worldwide** app hosted on G
 
 🔗 [**Weather Forecast App**](https://thewayaman.github.io/weather-forecast-worldwide/) 🌤️
 
-Feel free to explore the app, check the weather worldwide, and explore the features we've implemented! 😊
+Feel free to explore the app, check the weather worldwide, and explore the features I've implemented! 😊
 
 
 # frontend
